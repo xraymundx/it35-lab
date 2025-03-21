@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>User Authentication</title>
     
-    <base href="/" />
+    <base href="/it35-lab/" />
     
     <meta name="color-scheme" content="light dark" />
     <meta
@@ -25,29 +25,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="container">
-        <div class="form-container" id="loginForm">
-            <h2>Login</h2>
-            <form onsubmit="return handleLogin(event)">
-                <input type="email" id="loginEmail" placeholder="Email" required>
-                <input type="password" id="loginPassword" placeholder="Password" required>
-                <button type="submit">Login</button>
-            </form>
-            <p>Don't have an account? <a href="#" onclick="toggleForms()">Register</a></p>
-        </div>
-
-        <div class="form-container" id="registerForm" style="display: none;">
-            <h2>Register</h2>
-            <form onsubmit="return handleRegistration(event)">
-                <input type="text" id="regUsername" placeholder="Username" required>
-                <input type="email" id="regEmail" placeholder="Email" required>
-                <input type="password" id="regPassword" placeholder="Password" required>
-                <input type="password" id="regConfirmPassword" placeholder="Confirm Password" required>
-                <button type="submit">Register</button>
-            </form>
-            <p>Already have an account? <a href="#" onclick="toggleForms()">Login</a></p>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
