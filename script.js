@@ -43,6 +43,44 @@ function handleRegistration(event) {
     return false;
 }
 
+function handleLogin(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    if (!email.endsWith('@nbsc.edu.ph')) {
+        Toastify({
+            text: "Please use an @nbsc.edu.ph email address!",
+            duration: 3000,
+            close: true,
+            backgroundColor: "#f44336"
+        }).showToast();
+        return false;
+    }
+
+    const users = getUsers();
+    const user = users.find(u => u.email === email && u.password === password);
+
+    if (user) {
+        Toastify({
+            text: "Login successful! Welcome " + user.username,
+            duration: 3000,
+            close: true,
+            backgroundColor: "#4CAF50"
+        }).showToast();
+        event.target.reset();
+    } else {
+        Toastify({
+            text: "Invalid email or password combination!",
+            duration: 3000,
+            close: true,
+            backgroundColor: "#f44336"
+        }).showToast();
+    }
+    return false;
+}
+
 function toggleForms() {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
