@@ -23,4 +23,9 @@ function handleRegistration(event) {
         return false;
     }
 
+    if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return false;
+    }
+
 }
