@@ -18,5 +18,9 @@ function handleRegistration(event) {
     const password = document.getElementById('regPassword').value;
     const confirmPassword = document.getElementById('regConfirmPassword').value;
 
+    if (!email.endsWith('@nbsc.edu.ph')) {
+        alert('Please use an @nbsc.edu.ph email address!');
+        return false;
+    }
 
 }
