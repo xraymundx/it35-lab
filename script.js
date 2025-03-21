@@ -28,4 +28,19 @@ function handleRegistration(event) {
         return false;
     }
 
+    const users = getUsers();
+    if (users.some(user => user.email === email)) {
+        const modal = new bootstrap.Modal(document.getElementById('errorModal'));
+        document.getElementById('errorMessage').textContent = 'Email already registered!';
+        modal.show();
+        return false;
+    }
+
+    saveUser({ username, email, password });
+    alert('Registration successful! Please login.');
+    toggleForms();
+    event.target.reset();
+    return false;
 }
+
+
