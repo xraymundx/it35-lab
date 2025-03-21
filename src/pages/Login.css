@@ -1,0 +1,215 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f8f9fa;
+    padding: 16px;
+}
+
+ion-card {
+    width: 100%;
+    max-width: 320px;
+    margin: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+ion-card-header {
+    padding: 24px 20px 0;
+    background: white;
+}
+
+ion-card-title {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    margin-bottom: 0;
+    color: #333;
+}
+
+ion-card-content {
+    padding: 16px 20px 24px;
+    background: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+ion-item {
+    --background: #f8f9fa;
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --inner-padding-end: 12px;
+    --border-radius: 6px;
+    --border-width: 0;
+    --highlight-height: 0;
+    --min-height: 50px;
+    margin: 0;
+}
+
+ion-item.ion-invalid.ion-touched {
+    --background: rgba(235, 68, 90, 0.05);
+}
+
+ion-label {
+    --color: #666;
+    font-size: 14px;
+    margin-bottom: 4px;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+
+ion-input {
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-top: 14px; /* Increased from 8px to 14px */
+    --padding-bottom: 2px;
+    font-size: 15px;
+    --color: #333;
+}
+
+ion-input::part(helper-text) {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #888;
+}
+
+ion-button {
+    margin: 20px 0 8px;
+    height: 44px;
+    --border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    --box-shadow: none;
+}
+
+.ion-margin-top {
+    margin-top: 16px;
+}
+
+ion-toast {
+    --min-width: 260px;
+    --max-width: 90%;
+    --border-radius: 6px;
+    --background: #333;
+    font-size: 14px;
+    text-align: center;
+}
+
+.form-toggle {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #888;
+}
+
+.form-toggle ion-button {
+    --color: var(--ion-color-primary);
+    --margin: 0;
+    --padding-start: 4px;
+    --padding-end: 4px;
+    --height: auto;
+    font-weight: 500;
+    text-transform: none;
+}
+
+/* Clean floating label animation */
+ion-item ion-label[position="floating"] {
+    transform: translateY(8px) scale(1);
+    transition: all 0.2s ease;
+}
+
+ion-item.item-has-focus ion-label[position="floating"],
+ion-item.item-has-value ion-label[position="floating"] {
+    transform: translateY(-10px) scale(0.8);
+    opacity: 0.8;
+}
+
+/* Modal Styling */
+:root {
+    --ion-color-primary: #3880ff;
+    --ion-color-success: #2dd36f;
+    --ion-color-danger: #eb445a;
+}
+  
+/* Alert/Modal customization */
+.alert-modal {
+    --backdrop-opacity: 0.8;
+}
+  
+.alert-wrapper {
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    max-width: 340px;
+    overflow: hidden;
+}
+  
+.alert-head {
+    padding-top: 24px;
+    padding-bottom: 12px;
+    text-align: center;
+}
+  
+.alert-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+  
+.alert-sub-title {
+    font-size: 14px;
+    color: #666;
+}
+  
+.alert-message {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    white-space: pre-line;
+    text-align: left;
+    padding: 0 24px;
+}
+  
+.alert-button-group {
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+  
+.alert-button {
+    border-radius: 15px;
+    font-weight: 500;
+    padding: 10px 16px;
+    transition: background-color 0.2s ease;
+}
+  
+.alert-button.alert-button-cancel {
+    color: #666;
+    background: rgba(0, 0, 0, 0.05);
+}
+  
+.alert-button.alert-button-confirm {
+    color: white;
+    background: var(--ion-color-primary);
+}
+  
+/* Toast customization */
+ion-toast.success-toast {
+    --background: var(--ion-color-success);
+    --color: white;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+  
+ion-toast.error-toast {
+    --background: var(--ion-color-danger);
+    --color: white;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
