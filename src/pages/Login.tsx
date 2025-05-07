@@ -1,20 +1,20 @@
 import { 
     IonAvatar,
-      IonButton,
-      IonButtons,
-        IonContent, 
-        IonHeader, 
-        IonIcon, 
-        IonInput, 
-        IonInputPasswordToggle, 
-        IonItem, 
-        IonMenuButton, 
-        IonPage, 
-        IonTitle, 
-        IonToolbar, 
-        useIonRouter
-    } from '@ionic/react';
-    import { logoFacebook, logoIonic, logoTwitter } from 'ionicons/icons';
+    IonButton,
+    IonContent, 
+    IonIcon, 
+    IonInput, 
+    IonInputPasswordToggle, 
+    IonItem, 
+    IonPage, 
+    IonTitle, 
+    IonToolbar, 
+    useIonRouter, 
+    IonAlert 
+  } from '@ionic/react';
+  import { logoTwitter } from 'ionicons/icons';
+  import { useState } from 'react';
+
   
   const Login: React.FC = () => {
     const navigation = useIonRouter();
