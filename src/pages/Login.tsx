@@ -59,80 +59,105 @@ import { logoTwitter } from 'ionicons/icons';
 }
 
     return (
-      <IonPage>        
-        <IonContent className='ion-padding'>
-       
-        <div style={{
-                  display: 'flex',
-                  flexDirection:'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: '100%',
-                  width:'100%',
-                  marginTop:'-10rem',
-                  marginBottom:'-18rem',
-                }}>
-             <IonAvatar
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: '150px',
-                      height: '150px',
-                      borderRadius: '50%', 
-                      overflow: 'hidden' 
-                    }}
-                  >
-                    {/* <img alt="Silhouette of a person's head" src="https://scontent.fcgy2-2.fna.fbcdn.net/v/t39.30808-6/457628660_1592580897993280_557695295736145833_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEfyz7WC1Idegr07u9_DNo0nB__l3Tp5_ucH_-XdOnn-6kmxG7nvDuoCcQVTE0FLnaVCwDGtLa0av4LCODGN0Hp&_nc_ohc=QzkN6gJV28gQ7kNvgH7t4gw&_nc_oc=Adgpm7Xny_2bsaGS1ZQiFjhZuzuU7dZxyU3-ndUQvh4-ucThrwfd0qmZE5Y0HwJo-Rg&_nc_zt=23&_nc_ht=scontent.fcgy2-2.fna&_nc_gid=AabNn05ywewNzlnan4r-cRr&oh=00_AYBt5Bvwt-qz1OJoKX8Zau10eCQsC27pQSdiyo7-mrNlHg&oe=67CCD83A" /> */}
-                    {
-                     <IonIcon 
-                      icon={logoTwitter}
-                      color='primary'
-                      style={{ fontSize: '120px', color: '#6c757d' }} 
-                    />
-                    }
-                  </IonAvatar>
-                  <h1 style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}>USER LOGIN</h1>
-                    
+        <IonPage>
+        <IonContent style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: '100%',
+          padding: '20px',
+          backgroundColor: '#f8f9fa'
+        }}>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            marginBottom: '30px'
+          }}>
+            <IonAvatar style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '120px',
+              height: '120px',
+              borderRadius: '50%',
+              backgroundColor: '#ffffff',
+              marginBottom: '10px'
+            }}>
+              <IonIcon
+                icon={logoTwitter}
+                color="primary"
+                style={{
+                  fontSize: '50px',
+                  color: '#1da1f2'
+                }}
+              />
+            </IonAvatar>
+            <h1 style={{
+              fontSize: '24px',
+              fontWeight: 'bold',
+              color: '#333'
+            }}>
+              USER LOGIN
+            </h1>
           </div>
-
-        <IonTitle>Login</IonTitle>
-          <IonItem>
-        <IonInput label="Email input" type="email" placeholder="email@domain.com"></IonInput>
-      </IonItem>
-
-      
-      <IonItem>
-          <IonInput
-            type="password"
-            label="Password"
-            value="NeverGonnaGiveYouUp"
+  
+          <IonItem style={{ marginBottom: '15px', width: '100%' }}>
+            <IonInput
+              labelPlacement="floating"
+              value={username}
+              onIonChange={(e) => setUsername(e.detail.value!)}
+              placeholder="Enter username"
+              style={{ backgroundColor: '#ffffff' }}
+            />
+          </IonItem>
+          <IonItem style={{ marginBottom: '15px', width: '100%' }}>
+            <IonInput
+              labelPlacement="floating"
+              value={password}
+              onIonChange={(e) => setPassword(e.detail.value!)}
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Enter password"
+              style={{ backgroundColor: '#ffffff' }}
+            >
+              <IonInputPasswordToggle slot="end" onClick={() => setShowPassword(!showPassword)} />
+            </IonInput>
+          </IonItem>
+          {loginError && (
+            <IonText color="danger">
+              <p style={{
+                color: '#e74c3c',
+                marginBottom: '10px'
+              }}>
+                Incorrect username or password. Please try again.
+              </p>
+            </IonText>
+          )}
+          <IonButton 
+            onClick={doLogin} 
+            expand="full" 
+            style={{
+              backgroundColor: '#1da1f2',
+              color: 'white',
+              fontWeight: 'bold',
+              width: '100%'
+            }}
           >
-            <IonInputPasswordToggle slot="end" />
-          </IonInput>
-        </IonItem>
-
-        <IonButton onClick={doLogin} expand="full">
-          Login
-        </IonButton>
-        <IonButton onClick={doSignUp} expand="full">
-          SignUp
-        </IonButton>
-
-        <IonAlert
-          isOpen={showAlert}
-          onDidDismiss={() => {
-            setShowAlert(false); 
-            navigation.push('/it35-lab/app', 'forward', 'replace');
-          }}
-          header={'Login Successful'}
-          message={'You have successfully logged in.'}
-          buttons={['OK']}
-        />
+            Login
+          </IonButton>
+  
+          <IonButton 
+            onClick={() => navigation.push('/it35-lab/register', 'forward', 'replace')}
+            expand="full" 
+            color="secondary"
+            style={{
+              marginTop: '10px',
+              width: '100%'
+            }}
+          >
+            Create Account
+          </IonButton>
 
         </IonContent>
       </IonPage>
