@@ -29,7 +29,7 @@ import {
   const doSignUp = () => {
     navigation.push('/it35-lab/register', 'forward', 'replace');
   }
-  
+
     return (
       <IonPage>        
         <IonContent className='ion-padding'>
@@ -72,7 +72,7 @@ import {
                     
           </div>
 
-        <IonTitle>Login1</IonTitle>
+        <IonTitle>Login</IonTitle>
           <IonItem>
         <IonInput label="Email input" type="email" placeholder="email@domain.com"></IonInput>
       </IonItem>
