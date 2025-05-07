@@ -1,14 +1,19 @@
 import { 
-    IonButton,
-    IonButtons,
-      IonContent, 
-      IonHeader, 
-      IonMenuButton, 
-      IonPage, 
-      IonTitle, 
-      IonToolbar, 
-      useIonRouter
-  } from '@ionic/react';
+    IonAvatar,
+      IonButton,
+      IonButtons,
+        IonContent, 
+        IonHeader, 
+        IonIcon, 
+        IonInput, 
+        IonInputPasswordToggle, 
+        IonItem, 
+        IonMenuButton, 
+        IonPage, 
+        IonTitle, 
+        IonToolbar, 
+        useIonRouter
+    } from '@ionic/react';
   
   const Login: React.FC = () => {
     const navigation = useIonRouter();
