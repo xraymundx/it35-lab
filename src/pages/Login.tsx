@@ -23,7 +23,13 @@ import { logoTwitter } from 'ionicons/icons';
     const navigation = useIonRouter();
 
     
-  const [showAlert, setShowAlert] = useState(false);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [loginError, setLoginError] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
+    const [showToast, setShowToast] = useState(false);
 
   const doLogin = () => {
     setShowAlert(true); 
