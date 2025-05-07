@@ -88,9 +88,12 @@ import {
           </IonInput>
         </IonItem>
 
-    <IonButton onClick={() => doLogin()} expand="full">
-                Login
-            </IonButton>
+        <IonButton onClick={doLogin} expand="full">
+          Login
+        </IonButton>
+        <IonButton onClick={doSignUp} expand="full">
+          SignUp
+        </IonButton>
 
         </IonContent>
       </IonPage>
