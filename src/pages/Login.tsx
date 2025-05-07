@@ -22,9 +22,9 @@ import {
     
   const [showAlert, setShowAlert] = useState(false);
 
-    const doLogin = () => {
-        navigation.push('/it35-lab/app','forward','replace');
-    }
+  const doLogin = () => {
+    setShowAlert(true); 
+  }
     return (
       <IonPage>        
         <IonContent className='ion-padding'>
