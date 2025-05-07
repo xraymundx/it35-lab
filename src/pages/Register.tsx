@@ -52,3 +52,5 @@ import {
       </IonPage>
     );
   };
+
+  export default Register;
