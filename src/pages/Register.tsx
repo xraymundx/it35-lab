@@ -18,8 +18,18 @@ import {
   
   const Register: React.FC = () => {
      const navigation = useIonRouter();
-     const Register = () => {
-        navigation.push('/it35-lab', 'forward', 'replace');
+
+     const [firstName, setFirstName] = useState('');
+     const [lastName, setLastName] = useState('');
+     const [address, setAddress] = useState('');
+     const [email, setEmail] = useState('');
+     const [password, setPassword] = useState('');
+     const [confirmPassword, setConfirmPassword] = useState('');
+     const [showAlert, setShowAlert] = useState(false);
+     const [alertMessage, setAlertMessage] = useState('');
+     const [isLoading, setIsLoading] = useState(false);
+   
+
       }
 
     return (
