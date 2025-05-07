@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://{xraymundx}.github.io/{it35-lab}/",
+  "homepage": "https://xraymundx.github.io/{it35-lab}/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
