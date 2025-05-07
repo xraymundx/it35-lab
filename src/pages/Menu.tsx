@@ -68,3 +68,6 @@ import {
         </IonPage>
     );
   };
+
+    
+  export default Menu;
