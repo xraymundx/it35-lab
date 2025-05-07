@@ -31,7 +31,11 @@ import {
           <IonItem>
         <IonInput label="Email input" type="email" placeholder="email@domain.com"></IonInput>
       </IonItem>
-      
+
+      <IonInput type="password" label="Password" value="NeverGonnaGiveYouUp">
+      <IonInputPasswordToggle slot="end"></IonInputPasswordToggle>
+    </IonInput>
+
         </IonContent>
       </IonPage>
     );
