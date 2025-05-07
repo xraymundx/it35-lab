@@ -31,6 +31,10 @@ import { logoTwitter } from 'ionicons/icons';
     const [showPassword, setShowPassword] = useState(false);
     const [showToast, setShowToast] = useState(false);
 
+    const validUsername = 'user123';
+  const validPassword = 'password123';
+
+
   const doLogin = () => {
     setShowAlert(true); 
   }
