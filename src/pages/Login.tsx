@@ -36,8 +36,17 @@ import { logoTwitter } from 'ionicons/icons';
 
 
   const doLogin = () => {
-    setShowAlert(true); 
-  }
+    if (!username || !password) {
+      setShowAlert(true);
+    } else {
+      if (username === validUsername && password === validPassword) {
+        setShowSuccessModal(true);
+        setShowToast(true);
+      } else {
+        setLoginError(true);
+      }
+    }
+  };
 
   const doSignUp = () => {
     navigation.push('/it35-lab/register', 'forward', 'replace');
