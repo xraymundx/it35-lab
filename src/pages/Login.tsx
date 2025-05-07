@@ -95,6 +95,17 @@ import {
           SignUp
         </IonButton>
 
+        <IonAlert
+          isOpen={showAlert}
+          onDidDismiss={() => {
+            setShowAlert(false); 
+            navigation.push('/it35-lab/app', 'forward', 'replace');
+          }}
+          header={'Login Successful'}
+          message={'You have successfully logged in.'}
+          buttons={['OK']}
+        />
+
         </IonContent>
       </IonPage>
     );
