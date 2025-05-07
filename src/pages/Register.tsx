@@ -1,18 +1,20 @@
+import React, { useState } from 'react';
 import { 
-    IonButton,
-    IonButtons,
-      IonContent, 
-      IonHeader, 
-      IonInput, 
-      IonItem, 
-      IonList, 
-      IonMenuButton, 
-      IonPage, 
-      IonTextarea, 
-      IonTitle, 
-      IonToolbar,
-      useIonRouter
-  } from '@ionic/react';
+  IonButton,
+  IonContent, 
+  IonInput, 
+  IonItem, 
+  IonTextarea, 
+  IonPage, 
+  IonHeader, 
+  IonTitle, 
+  IonToolbar,
+  IonAlert,
+  IonLoading,
+  IonLabel,
+  IonText,
+  useIonRouter
+} from '@ionic/react';
   
   const Register: React.FC = () => {
      const navigation = useIonRouter();
