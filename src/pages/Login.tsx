@@ -56,11 +56,7 @@ import { logoTwitter } from 'ionicons/icons';
     setShowSuccessModal(false);
     navigation.push('/it35-lab/app', 'forward', 'replace');
   };
-
-
-  const doSignUp = () => {
-    navigation.push('/it35-lab/register', 'forward', 'replace');
-  }
+}
 
     return (
       <IonPage>        
