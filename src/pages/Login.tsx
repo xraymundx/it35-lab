@@ -48,6 +48,11 @@ import { logoTwitter } from 'ionicons/icons';
     }
   };
 
+  const handleAlertConfirm = () => {
+    setShowAlert(false);
+  };
+
+
   const doSignUp = () => {
     navigation.push('/it35-lab/register', 'forward', 'replace');
   }
