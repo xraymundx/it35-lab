@@ -14,6 +14,7 @@ import {
         IonToolbar, 
         useIonRouter
     } from '@ionic/react';
+    import { logoFacebook, logoIonic, logoTwitter } from 'ionicons/icons';
   
   const Login: React.FC = () => {
     const navigation = useIonRouter();
