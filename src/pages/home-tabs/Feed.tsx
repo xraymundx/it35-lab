@@ -1,12 +1,22 @@
 import { 
-    IonButtons,
-      IonContent, 
-      IonHeader, 
-      IonMenuButton, 
-      IonPage, 
-      IonTitle, 
-      IonToolbar 
-  } from '@ionic/react';
+    IonButton,
+      IonButtons,
+        IonCard,
+        IonCardContent,
+        IonCardHeader,
+        IonCardSubtitle,
+        IonCardTitle,
+        IonContent, 
+        IonHeader, 
+        IonItem, 
+        IonLabel, 
+        IonList, 
+        IonMenuButton, 
+        IonPage, 
+        IonThumbnail, 
+        IonTitle, 
+        IonToolbar 
+    } from '@ionic/react';
   
   const Feed: React.FC = () => {
     return (
