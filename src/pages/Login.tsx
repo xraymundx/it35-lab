@@ -173,7 +173,16 @@ import { logoTwitter } from 'ionicons/icons';
           duration={3000}
         />
 
-
+<IonAlert
+          isOpen={showAlert}
+          onDidDismiss={() => setShowAlert(false)}
+          header="Please Fill in All Fields"
+          message="All fields are required. Please fill in all fields."
+          buttons={[{
+            text: 'OK',
+            handler: handleAlertConfirm,
+          }]}
+        />
         </IonContent>
       </IonPage>
     );
