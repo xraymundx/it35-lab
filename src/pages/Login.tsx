@@ -166,6 +166,14 @@ import { logoTwitter } from 'ionicons/icons';
           </IonContent>
         </IonModal>
 
+        <IonToast
+          isOpen={showToast}
+          message="Login successful! Redirecting to the dashboard..."
+          onDidDismiss={() => setShowToast(false)}
+          duration={3000}
+        />
+
+
         </IonContent>
       </IonPage>
     );
