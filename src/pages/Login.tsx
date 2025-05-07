@@ -15,9 +15,12 @@ import {
   import { logoTwitter } from 'ionicons/icons';
   import { useState } from 'react';
 
-  
+
   const Login: React.FC = () => {
     const navigation = useIonRouter();
+
+    
+  const [showAlert, setShowAlert] = useState(false);
 
     const doLogin = () => {
         navigation.push('/it35-lab/app','forward','replace');
