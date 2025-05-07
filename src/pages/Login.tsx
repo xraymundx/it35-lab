@@ -1,19 +1,22 @@
+import React, { useState } from 'react';
 import { 
-    IonAvatar,
-    IonButton,
-    IonContent, 
-    IonIcon, 
-    IonInput, 
-    IonInputPasswordToggle, 
-    IonItem, 
-    IonPage, 
-    IonTitle, 
-    IonToolbar, 
-    useIonRouter, 
-    IonAlert 
-  } from '@ionic/react';
-  import { logoTwitter } from 'ionicons/icons';
-  import { useState } from 'react';
+  IonAvatar,
+  IonButton,
+  IonContent, 
+  IonIcon, 
+  IonInput, 
+  IonInputPasswordToggle, 
+  IonItem, 
+  IonPage, 
+  IonText, 
+  IonToolbar, 
+  IonTitle, 
+  useIonRouter, 
+  IonAlert, 
+  IonModal, 
+  IonToast
+} from '@ionic/react';
+import { logoTwitter } from 'ionicons/icons';
 
 
   const Login: React.FC = () => {
