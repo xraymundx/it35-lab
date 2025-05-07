@@ -25,6 +25,11 @@ import {
   const doLogin = () => {
     setShowAlert(true); 
   }
+
+  const doSignUp = () => {
+    navigation.push('/it35-lab/register', 'forward', 'replace');
+  }
+  
     return (
       <IonPage>        
         <IonContent className='ion-padding'>
