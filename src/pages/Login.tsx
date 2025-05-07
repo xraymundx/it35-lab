@@ -64,7 +64,7 @@ import {
                     
           </div>
 
-        <IonTitle>Login</IonTitle>
+        <IonTitle>Login1</IonTitle>
           <IonItem>
         <IonInput label="Email input" type="email" placeholder="email@domain.com"></IonInput>
       </IonItem>
