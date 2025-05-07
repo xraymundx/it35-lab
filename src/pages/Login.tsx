@@ -23,16 +23,15 @@ import {
         navigation.push('/it35-lab/app','forward','replace');
     }
     return (
-      <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Login</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+      <IonPage>        
         <IonContent className='ion-padding'>
-            <IonButton onClick={() => doLogin()} expand="full">
-                Login
-            </IonButton>
+       
+
+        <IonTitle>Login</IonTitle>
+          <IonItem>
+        <IonInput label="Email input" type="email" placeholder="email@domain.com"></IonInput>
+      </IonItem>
+      
         </IonContent>
       </IonPage>
     );
