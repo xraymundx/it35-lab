@@ -36,6 +36,10 @@ import {
       <IonInputPasswordToggle slot="end"></IonInputPasswordToggle>
     </IonInput>
 
+    <IonButton onClick={() => doLogin()} expand="full">
+                Login
+            </IonButton>
+
         </IonContent>
       </IonPage>
     );
