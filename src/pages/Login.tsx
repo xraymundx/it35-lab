@@ -77,9 +77,16 @@ import {
         <IonInput label="Email input" type="email" placeholder="email@domain.com"></IonInput>
       </IonItem>
 
-      <IonInput type="password" label="Password" value="NeverGonnaGiveYouUp">
-      <IonInputPasswordToggle slot="end"></IonInputPasswordToggle>
-    </IonInput>
+      
+      <IonItem>
+          <IonInput
+            type="password"
+            label="Password"
+            value="NeverGonnaGiveYouUp"
+          >
+            <IonInputPasswordToggle slot="end" />
+          </IonInput>
+        </IonItem>
 
     <IonButton onClick={() => doLogin()} expand="full">
                 Login
