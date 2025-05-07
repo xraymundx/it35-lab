@@ -159,6 +159,13 @@ import { logoTwitter } from 'ionicons/icons';
             Create Account
           </IonButton>
 
+          <IonModal isOpen={showSuccessModal} onDidDismiss={handleSuccessModalClose}>
+          <IonContent className="ion-padding">
+            <h2>Login Successful!</h2>
+            <IonButton expand="full" onClick={handleSuccessModalClose}>Go to Dashboard</IonButton>
+          </IonContent>
+        </IonModal>
+
         </IonContent>
       </IonPage>
     );
