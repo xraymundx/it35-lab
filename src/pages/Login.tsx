@@ -52,6 +52,11 @@ import { logoTwitter } from 'ionicons/icons';
     setShowAlert(false);
   };
 
+  const handleSuccessModalClose = () => {
+    setShowSuccessModal(false);
+    navigation.push('/it35-lab/app', 'forward', 'replace');
+  };
+
 
   const doSignUp = () => {
     navigation.push('/it35-lab/register', 'forward', 'replace');
