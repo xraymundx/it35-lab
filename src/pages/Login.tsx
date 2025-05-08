@@ -56,38 +56,44 @@ const Login: React.FC = () => {
   return (
     <IonPage>
       <IonContent className="login-container" fullscreen>
-        <div className="center-wrapper">
-          <div className="form-container">
-            <div className="avatar-container">
-              <IonAvatar className="avatar">
-                <IonIcon icon={logoTwitter} color="primary" className="avatar-icon" />
-              </IonAvatar>
+        <div className="background-overlay">
+          <div className="center-wrapper">
+            <div className="form-container">
+              <div className="avatar-container">
+                <IonAvatar className="avatar">
+                  <img
+                  src="https://th.bing.com/th/id/OIP.ULapetmoz5AgnulzGNttFAHaFh?w=225&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                  alt="Avatar"
+                  className="avatar-icon"
+                  />
+                </IonAvatar>
+              </div>
+              <h1 className="title">FAIRYTAIL USERS ONLY</h1>
+              <IonInput
+                label="Email"
+                labelPlacement="floating"
+                fill="outline"
+                type="email"
+                placeholder="Enter Email"
+                value={email}
+                onIonChange={(e) => setEmail(e.detail.value!)}
+              />
+              <IonInput
+                fill="outline"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onIonChange={(e) => setPassword(e.detail.value!)}
+              >
+                <IonInputPasswordToggle slot="end"></IonInputPasswordToggle>
+              </IonInput>
+              <IonButton onClick={doLogin} expand="full" shape="round">
+                Login
+              </IonButton>
+              <IonButton routerLink="/it35-lab/register" expand="full" fill="clear" shape="round">
+                Don't have an account? Register here
+              </IonButton>
             </div>
-            <h1 className="title">USER LOGIN</h1>
-            <IonInput
-              label="Email"
-              labelPlacement="floating"
-              fill="outline"
-              type="email"
-              placeholder="Enter Email"
-              value={email}
-              onIonChange={(e) => setEmail(e.detail.value!)}
-            />
-            <IonInput
-              fill="outline"
-              type="password"
-              placeholder="Password"
-              value={password}
-              onIonChange={(e) => setPassword(e.detail.value!)}
-            >
-              <IonInputPasswordToggle slot="end"></IonInputPasswordToggle>
-            </IonInput>
-            <IonButton onClick={doLogin} expand="full" shape="round">
-              Login
-            </IonButton>
-            <IonButton routerLink="/it35-lab/register" expand="full" fill="clear" shape="round">
-              Don't have an account? Register here
-            </IonButton>
           </div>
         </div>
 
@@ -108,9 +114,21 @@ const Login: React.FC = () => {
           .login-container {
             --padding-start: 0;
             --padding-end: 0;
-            background-image: url('/images/solo levelling.gif');
-            background-size: cover;
-            background-position: center;
+            position: relative;
+            overflow: hidden;
+          }
+
+          .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://th.bing.com/th/id/R.7f1d0308536dfae40b5fe6d572ab43ea?rik=AcK0EOai9tRaPA&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fpUtDcJA.jpg&ehk=HsAN4chKiuHICk6GFYI9JoqHT5GtCtS7mzBdsMZ0eqU%3d&risl=&pid=ImgRaw&r=0');
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; /* Centers the image in the background */
+            z-index: -1;
           }
 
           .center-wrapper {
@@ -140,8 +158,8 @@ const Login: React.FC = () => {
           }
 
           .avatar {
-            width: 100px;
-            height: 100px;
+            width: 99%;
+            height: 99%;
             border-radius: 50%;
             overflow: hidden;
           }
