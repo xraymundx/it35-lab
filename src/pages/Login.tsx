@@ -1,21 +1,24 @@
-import { 
+import {
   IonAlert,
   IonAvatar,
   IonButton,
-  IonContent, 
-  IonIcon, 
-  IonInput, 
-  IonInputPasswordToggle,  
-  IonPage,  
-  IonToast,  
+  IonContent,
+  IonIcon,
+  IonInput,
+  IonInputPasswordToggle,
+  IonPage,
+  IonToast,
   useIonRouter
 } from '@ionic/react';
-import { logoIonic, logoTwitter } from 'ionicons/icons';
+import { logoTwitter } from 'ionicons/icons';
 import { useState } from 'react';
 import { supabase } from '../utils/supabaseClient';
-import bcrypt from 'bcryptjs';
 
-const AlertBox: React.FC<{ message: string; isOpen: boolean; onClose: () => void }> = ({ message, isOpen, onClose }) => {
+const AlertBox: React.FC<{ message: string; isOpen: boolean; onClose: () => void }> = ({
+  message,
+  isOpen,
+  onClose
+}) => {
   return (
     <IonAlert
       isOpen={isOpen}
@@ -44,51 +47,51 @@ const Login: React.FC = () => {
       return;
     }
 
-    setShowToast(true); 
+    setShowToast(true);
     setTimeout(() => {
       navigation.push('/it35-lab/app', 'forward', 'replace');
     }, 300);
   };
-  
+
   return (
     <IonPage>
-      <IonContent className="login-container">
-        <div className="form-container">
-          <div className="avatar-container">
-            <IonAvatar className="avatar">
-              <IonIcon icon={logoTwitter} color="primary" className="avatar-icon" />
-            </IonAvatar>
+      <IonContent className="login-container" fullscreen>
+        <div className="center-wrapper">
+          <div className="form-container">
+            <div className="avatar-container">
+              <IonAvatar className="avatar">
+                <IonIcon icon={logoTwitter} color="primary" className="avatar-icon" />
+              </IonAvatar>
+            </div>
+            <h1 className="title">USER LOGIN</h1>
+            <IonInput
+              label="Email"
+              labelPlacement="floating"
+              fill="outline"
+              type="email"
+              placeholder="Enter Email"
+              value={email}
+              onIonChange={(e) => setEmail(e.detail.value!)}
+            />
+            <IonInput
+              fill="outline"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onIonChange={(e) => setPassword(e.detail.value!)}
+            >
+              <IonInputPasswordToggle slot="end"></IonInputPasswordToggle>
+            </IonInput>
+            <IonButton onClick={doLogin} expand="full" shape="round">
+              Login
+            </IonButton>
+            <IonButton routerLink="/it35-lab/register" expand="full" fill="clear" shape="round">
+              Don't have an account? Register here
+            </IonButton>
           </div>
-          <h1 className="title">USER LOGIN</h1>
-          <IonInput
-            label="Email" 
-            labelPlacement="floating" 
-            fill="outline"
-            type="email"
-            placeholder="Enter Email"
-            value={email}
-            onIonChange={e => setEmail(e.detail.value!)}
-          />
-          <IonInput
-            fill="outline"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onIonChange={e => setPassword(e.detail.value!)}
-          >
-            <IonInputPasswordToggle slot="end"></IonInputPasswordToggle>
-          </IonInput>
-          <IonButton onClick={doLogin} expand="full" shape="round">
-            Login
-          </IonButton>
-          <IonButton routerLink="/it35-lab/register" expand="full" fill="clear" shape="round">
-            Don't have an account? Register here
-          </IonButton>
         </div>
 
-
         <AlertBox message={alertMessage} isOpen={showAlert} onClose={() => setShowAlert(false)} />
-
 
         <IonToast
           isOpen={showToast}
@@ -103,13 +106,19 @@ const Login: React.FC = () => {
       <style>
         {`
           .login-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            --padding-start: 0;
+            --padding-end: 0;
             background-image: url('/images/solo levelling.gif');
             background-size: cover;
             background-position: center;
+          }
+
+          .center-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
           }
 
           .form-container {
@@ -122,7 +131,6 @@ const Login: React.FC = () => {
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 12px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            margin-top: 40px;
           }
 
           .avatar-container {
