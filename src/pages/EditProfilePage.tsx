@@ -196,6 +196,7 @@ const EditAccount: React.FC = () => {
                   style={{ display: 'none' }}
                   accept="image/*"
                   onChange={handleAvatarChange}
+                  title="Upload Avatar"
                 />
   
                 <IonButton expand="block" onClick={() => fileInputRef.current?.click()}>

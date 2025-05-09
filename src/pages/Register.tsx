@@ -12,7 +12,7 @@ import {
     IonCardContent,
     IonCardHeader,
     IonCardTitle,
-    IonAlert,
+    IonAlert
 } from '@ionic/react';
 import { supabase } from '../utils/supabaseClient';
 import bcrypt from 'bcryptjs';
@@ -34,6 +34,7 @@ const Register: React.FC = () => {
             setShowAlert(true);
             return;
         }
+
         if (password !== confirmPassword) {
             setAlertMessage("Passwords do not match.");
             setShowAlert(true);
@@ -45,7 +46,13 @@ const Register: React.FC = () => {
             if (error) throw new Error(error.message);
 
             const hashedPassword = await bcrypt.hash(password, 10);
-            await supabase.from("users").insert([{ username, user_email: email, user_firstname: firstName, user_lastname: lastName, user_password: hashedPassword }]);
+            await supabase.from("users").insert([{
+                username,
+                user_email: email,
+                user_firstname: firstName,
+                user_lastname: lastName,
+                user_password: hashedPassword
+            }]);
 
             setShowSuccessModal(true);
         } catch (err) {
@@ -55,33 +62,35 @@ const Register: React.FC = () => {
     };
 
     return (
-        <IonPage className="register-container">
+        <IonPage>
             <IonContent fullscreen>
-                <div className="form-container">
-                    <IonCard className="register-card">
-                        <IonCardHeader>
-                            <IonCardTitle>Create Account</IonCardTitle>
-                        </IonCardHeader>
-                        <IonCardContent>
-                            <IonInput placeholder="Username" value={username} onIonChange={e => setUsername(e.detail.value!)} fill="outline" />
-                            <IonInput placeholder="First Name" value={firstName} onIonChange={e => setFirstName(e.detail.value!)} fill="outline" />
-                            <IonInput placeholder="Last Name" value={lastName} onIonChange={e => setLastName(e.detail.value!)} fill="outline" />
-                            <IonInput type="email" placeholder="youremail@nbsc.edu.ph" value={email} onIonChange={e => setEmail(e.detail.value!)} fill="outline" />
-                            <IonInput type="password" placeholder="Password" value={password} onIonChange={e => setPassword(e.detail.value!)} fill="outline">
-                                <IonInputPasswordToggle slot="end" />
-                            </IonInput>
-                            <IonInput type="password" placeholder="Confirm Password" value={confirmPassword} onIonChange={e => setConfirmPassword(e.detail.value!)} fill="outline">
-                                <IonInputPasswordToggle slot="end" />
-                            </IonInput>
+                <div className="background-wrapper">
+                    <div className="form-wrapper">
+                        <IonCard className="register-card">
+                            <IonCardHeader>
+                                <IonCardTitle>Create Account</IonCardTitle>
+                            </IonCardHeader>
+                            <IonCardContent>
+                                <IonInput placeholder="Username" value={username} onIonChange={e => setUsername(e.detail.value!)} fill="outline" />
+                                <IonInput placeholder="First Name" value={firstName} onIonChange={e => setFirstName(e.detail.value!)} fill="outline" />
+                                <IonInput placeholder="Last Name" value={lastName} onIonChange={e => setLastName(e.detail.value!)} fill="outline" />
+                                <IonInput type="email" placeholder="youremail@nbsc.edu.ph" value={email} onIonChange={e => setEmail(e.detail.value!)} fill="outline" />
+                                <IonInput type="password" placeholder="Password" value={password} onIonChange={e => setPassword(e.detail.value!)} fill="outline">
+                                    <IonInputPasswordToggle slot="end" />
+                                </IonInput>
+                                <IonInput type="password" placeholder="Confirm Password" value={confirmPassword} onIonChange={e => setConfirmPassword(e.detail.value!)} fill="outline">
+                                    <IonInputPasswordToggle slot="end" />
+                                </IonInput>
 
-                            <IonButton expand="full" shape="round" size="default" onClick={doRegister}>Register</IonButton>
-                            <IonButton routerLink="/it35-lab" expand="full" fill="clear" size="default">Sign In</IonButton>
-                        </IonCardContent>
-                    </IonCard>
+                                <IonButton expand="full" shape="round" size="default" onClick={doRegister}>Register</IonButton>
+                                <IonButton routerLink="/it35-lab" expand="full" fill="clear" size="default">Sign In</IonButton>
+                            </IonCardContent>
+                        </IonCard>
+                    </div>
                 </div>
 
                 <IonModal isOpen={showSuccessModal} onDidDismiss={() => setShowSuccessModal(false)}>
-                    <IonContent className="ion-padding ion-text-center" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh', justifyContent: 'center' }}>
+                    <IonContent className="ion-padding ion-text-center" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                         <IonTitle>🎉 Registration Successful</IonTitle>
                         <IonText>Your account has been created. Check your email.</IonText>
                         <IonButton routerLink="/it35-lab" routerDirection="back" color="primary">Go to Login</IonButton>
@@ -91,36 +100,35 @@ const Register: React.FC = () => {
                 <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} header="Error" message={alertMessage} buttons={['OK']} />
             </IonContent>
 
-           
+            {/* Embedded Styles */}
             <style>
                 {`
-                .register-container {
-                    background: url('/images/solo levelling.gif') no-repeat center center fixed;
-                    background-size: cover;
-                    width: 100%;
-                    height: 100vh;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-                
-                .form-container {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                    max-width: 450px;
-                }
+                    .background-wrapper {
+                        background: url('https://anhdepfree.com/wp-content/uploads/2021/02/hinh-fairy-tail-natsudragneel-ngau-33922-1536x1112.png') no-repeat center center;
+                        background-size: cover;
+                        width: 100%;
+                        min-height: 100vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
 
-                .register-card {
-                    width: 100%;
-                    padding: 20px;
-                    background-color: rgba(255, 255, 255, 0.85);
-                    border-radius: 12px;
-                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-                    text-align: center;
-                }
+                    .form-wrapper {
+                        width: 100%;
+                        max-width: 400px;
+                        padding: 20px;
+                    }
+
+                    .register-card {
+                        background-color: rgba(255, 255, 255, 0.9);
+                        padding: 20px;
+                        border-radius: 12px;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                    }
+
+                    ion-input {
+                        margin-bottom: 12px;
+                    }
                 `}
             </style>
         </IonPage>
