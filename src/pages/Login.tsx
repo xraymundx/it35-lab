@@ -124,10 +124,10 @@ const Login: React.FC = () => {
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://th.bing.com/th/id/R.7f1d0308536dfae40b5fe6d572ab43ea?rik=AcK0EOai9tRaPA&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fpUtDcJA.jpg&ehk=HsAN4chKiuHICk6GFYI9JoqHT5GtCtS7mzBdsMZ0eqU%3d&risl=&pid=ImgRaw&r=0');
-            background-size: cover; /* Ensures the image covers the entire background */
-            background-repeat: no-repeat; /* Prevents the image from repeating */
-            background-position: center; /* Centers the image in the background */
+            background-color: black; /* Set background to black */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             z-index: -1;
           }
 

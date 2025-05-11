@@ -71,41 +71,90 @@ const Register: React.FC = () => {
                                 <IonCardTitle>Create Account</IonCardTitle>
                             </IonCardHeader>
                             <IonCardContent>
-                                <IonInput placeholder="Username" value={username} onIonChange={e => setUsername(e.detail.value!)} fill="outline" />
-                                <IonInput placeholder="First Name" value={firstName} onIonChange={e => setFirstName(e.detail.value!)} fill="outline" />
-                                <IonInput placeholder="Last Name" value={lastName} onIonChange={e => setLastName(e.detail.value!)} fill="outline" />
-                                <IonInput type="email" placeholder="youremail@nbsc.edu.ph" value={email} onIonChange={e => setEmail(e.detail.value!)} fill="outline" />
-                                <IonInput type="password" placeholder="Password" value={password} onIonChange={e => setPassword(e.detail.value!)} fill="outline">
+                                <IonInput
+                                    placeholder="Username"
+                                    value={username}
+                                    onIonChange={e => setUsername(e.detail.value!)}
+                                    fill="outline"
+                                />
+                                <IonInput
+                                    placeholder="First Name"
+                                    value={firstName}
+                                    onIonChange={e => setFirstName(e.detail.value!)}
+                                    fill="outline"
+                                />
+                                <IonInput
+                                    placeholder="Last Name"
+                                    value={lastName}
+                                    onIonChange={e => setLastName(e.detail.value!)}
+                                    fill="outline"
+                                />
+                                <IonInput
+                                    type="email"
+                                    placeholder="youremail@nbsc.edu.ph"
+                                    value={email}
+                                    onIonChange={e => setEmail(e.detail.value!)}
+                                    fill="outline"
+                                />
+                                <IonInput
+                                    type="password"
+                                    placeholder="Password"
+                                    value={password}
+                                    onIonChange={e => setPassword(e.detail.value!)}
+                                    fill="outline"
+                                >
                                     <IonInputPasswordToggle slot="end" />
                                 </IonInput>
-                                <IonInput type="password" placeholder="Confirm Password" value={confirmPassword} onIonChange={e => setConfirmPassword(e.detail.value!)} fill="outline">
+                                <IonInput
+                                    type="password"
+                                    placeholder="Confirm Password"
+                                    value={confirmPassword}
+                                    onIonChange={e => setConfirmPassword(e.detail.value!)}
+                                    fill="outline"
+                                >
                                     <IonInputPasswordToggle slot="end" />
                                 </IonInput>
 
-                                <IonButton expand="full" shape="round" size="default" onClick={doRegister}>Register</IonButton>
-                                <IonButton routerLink="/it35-lab" expand="full" fill="clear" size="default">Sign In</IonButton>
+                                <IonButton expand="full" shape="round" size="default" onClick={doRegister}>
+                                    Register
+                                </IonButton>
+                                <IonButton routerLink="/it35-lab" expand="full" fill="clear" size="default">
+                                    Sign In
+                                </IonButton>
                             </IonCardContent>
                         </IonCard>
                     </div>
                 </div>
 
                 <IonModal isOpen={showSuccessModal} onDidDismiss={() => setShowSuccessModal(false)}>
-                    <IonContent className="ion-padding ion-text-center" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+                    <IonContent className="ion-padding ion-text-center" style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        height: '100%'
+                    }}>
                         <IonTitle>🎉 Registration Successful</IonTitle>
                         <IonText>Your account has been created. Check your email.</IonText>
-                        <IonButton routerLink="/it35-lab" routerDirection="back" color="primary">Go to Login</IonButton>
+                        <IonButton routerLink="/it35-lab" routerDirection="back" color="primary">
+                            Go to Login
+                        </IonButton>
                     </IonContent>
                 </IonModal>
 
-                <IonAlert isOpen={showAlert} onDidDismiss={() => setShowAlert(false)} header="Error" message={alertMessage} buttons={['OK']} />
+                <IonAlert
+                    isOpen={showAlert}
+                    onDidDismiss={() => setShowAlert(false)}
+                    header="Error"
+                    message={alertMessage}
+                    buttons={['OK']}
+                />
             </IonContent>
 
             {/* Embedded Styles */}
             <style>
                 {`
                     .background-wrapper {
-                        background: url('https://anhdepfree.com/wp-content/uploads/2021/02/hinh-fairy-tail-natsudragneel-ngau-33922-1536x1112.png') no-repeat center center;
-                        background-size: cover;
                         width: 100%;
                         min-height: 100vh;
                         display: flex;
@@ -114,13 +163,18 @@ const Register: React.FC = () => {
                     }
 
                     .form-wrapper {
-                        width: 100%;
-                        max-width: 400px;
+                        background-color: rgba(255, 255, 255, 0.9);
+                        border-radius: 12px;
                         padding: 20px;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                        backdrop-filter: blur(4px);
                     }
 
                     .register-card {
-                        background-color: rgba(255, 255, 255, 0.9);
+                        background-image: url('https://64.media.tumblr.com/27223392417ee40f099ff8499a023ce5/4e4b8042e61ebea7-3d/s500x750/227f185c0e72b8e5b389f8ee6bb0a0af9fe2cc0b.jpg');
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
                         padding: 20px;
                         border-radius: 12px;
                         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -128,6 +182,14 @@ const Register: React.FC = () => {
 
                     ion-input {
                         margin-bottom: 12px;
+                        --color: #007bff; /* Input text color */
+                        --placeholder-color: #007bff; /* Placeholder text color */
+                    }
+
+                    ion-card-title,
+                    ion-text,
+                    ion-title {
+                        color: #007bff !important; /* Titles and text color */
                     }
                 `}
             </style>
